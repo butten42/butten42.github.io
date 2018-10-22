@@ -1,0 +1,721 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="花了两天时间看了下下面的教程，VUE是现在准备在学的，只看了一章，看起来和Knockout有类似之处，MDN主要还是做一些复习吧（但是其中的一些练习居然也要花好久才写完），回锅了一些基本方法，重新梳理了做项目的思路流程，对原型有了新的认识。vue 教程MDN Javascript教程 vue 教程 声明渲染 条件与循环 处理用户输入 组件化应用构建  Vue.js 的核心是一个允许采用简洁的模板语">
+<meta property="og:type" content="article">
+<meta property="og:title" content="vue文档与MDN-js指南学习">
+<meta property="og:url" content="http://yoursite.com/2017/09/20/vue文档与MDN-js指南学习/index.html">
+<meta property="og:site_name" content="The Dragon&#39;s Call">
+<meta property="og:description" content="花了两天时间看了下下面的教程，VUE是现在准备在学的，只看了一章，看起来和Knockout有类似之处，MDN主要还是做一些复习吧（但是其中的一些练习居然也要花好久才写完），回锅了一些基本方法，重新梳理了做项目的思路流程，对原型有了新的认识。vue 教程MDN Javascript教程 vue 教程 声明渲染 条件与循环 处理用户输入 组件化应用构建  Vue.js 的核心是一个允许采用简洁的模板语">
+<meta property="og:updated_time" content="2018-02-08T06:45:28.503Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="vue文档与MDN-js指南学习">
+<meta name="twitter:description" content="花了两天时间看了下下面的教程，VUE是现在准备在学的，只看了一章，看起来和Knockout有类似之处，MDN主要还是做一些复习吧（但是其中的一些练习居然也要花好久才写完），回锅了一些基本方法，重新梳理了做项目的思路流程，对原型有了新的认识。vue 教程MDN Javascript教程 vue 教程 声明渲染 条件与循环 处理用户输入 组件化应用构建  Vue.js 的核心是一个允许采用简洁的模板语">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/09/20/vue文档与MDN-js指南学习/"/>
+
+
+
+
+
+  <title>vue文档与MDN-js指南学习 | The Dragon's Call</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">The Dragon's Call</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Startseite
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archiv
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/20/vue文档与MDN-js指南学习/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Butten">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="The Dragon's Call">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">vue文档与MDN-js指南学习</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Veröffentlicht am</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-09-20T19:59:36+08:00">
+                2017-09-20
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>花了两天时间看了下下面的教程，VUE是现在准备在学的，只看了一章，看起来和Knockout有类似之处，MDN主要还是做一些复习吧（但是其中的一些练习居然也要花好久才写完），回锅了一些基本方法，重新梳理了做项目的思路流程，对原型有了新的认识。<br><a href="https://cn.vuejs.org/v2/guide/" target="_blank" rel="noopener">vue 教程</a><br><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript" target="_blank" rel="noopener">MDN Javascript教程</a></p>
+<h3 id="vue-教程"><a href="#vue-教程" class="headerlink" title="vue 教程"></a><a href="#vue-教程" title="vue 教程"></a>vue 教程</h3><ul>
+<li>声明渲染</li>
+<li>条件与循环</li>
+<li>处理用户输入</li>
+<li>组件化应用构建</li>
+</ul>
+<p>Vue.js 的核心是一个允许采用简洁的模板语法来声明式的将数据渲染进 DOM<br>术语：<code>v-bind</code> <code>v-if</code> <code>v-for</code> <code>v-on</code> <code>v-model</code>(双向绑定)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">`Vue.component(&apos;todo-item&apos;, &#123;</div><div class="line">  template: &apos;&lt;li&gt;这是个待办项&lt;/li&gt;&apos;</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+
+<h3 id="MDN的JS教程"><a href="#MDN的JS教程" class="headerlink" title="MDN的JS教程"></a><a href="#MDN的JS教程" title="MDN的JS教程"></a>MDN的JS教程</h3><p>包括了四个部分：</p>
+<ul>
+<li>快速入门</li>
+<li>js指南</li>
+<li>中级教程</li>
+<li>高级教程</li>
+</ul>
+<h4 id="快速入门"><a href="#快速入门" class="headerlink" title="快速入门"></a><a href="#快速入门" title="快速入门"></a>快速入门</h4><h5 id="起步"><a href="#起步" class="headerlink" title="起步"></a><a href="#起步" title="起步"></a>起步</h5><ul>
+<li>介绍了JavaScript 的基础功能，比如变量、字符串、数字、数组等。</li>
+<li>介绍了常见类型的代码块，比如条件语句、循环、函数、以及事件等。</li>
+<li>介绍对象的设计思想和语法、如何创建对象，并解释 JSON 数据是什么、如何使用。</li>
+<li>了解有哪些 API，并学习使用开发过程中最常见的 API。<blockquote>
+<p>有意思的是其中一个例子‘制作一个随机数的猜测游戏’，技术上很简单啦，无法是使用random生成随机数，然后提示用户的数字大小，再处理是否成功猜测的事件。在这里教程很详细的分化了每个步骤，和FCC上的user story一样，都是要求你“像一个程序员一样思考”。  </p>
+<p>回顾了一下字符串的方法：<code>slice()</code> <code>toLowerCase()</code> <code>toUpperCase()</code> <code>replace()</code> <code>split()</code> <code>join()</code> <code>toString</code> <code>shift</code> <code>unshift</code></p>
+</blockquote>
+</li>
+</ul>
+<h5 id="基本结构"><a href="#基本结构" class="headerlink" title="基本结构"></a><a href="#基本结构" title="基本结构"></a>基本结构</h5><p>介绍了条件控制语句、循环语句、函数模块、事件等通用代码块<br>一个评估项目： image gallery<br>三元运算：<code>( condition ) ? run this code : run this code instead</code> 在条件后面加上’?’和’:’前者在ture时执行，后者在false时执行。（貌似url上也有类似的语法）<br>返回值<br>addEventListener() and removeEventListener()<br>onchange() onsubmit()<br>stopPropagation();</p>
+<h5 id="对象介绍"><a href="#对象介绍" class="headerlink" title="对象介绍"></a><a href="#对象介绍" title="对象介绍"></a>对象介绍</h5><p>介绍对象的设计思想和语法，再说明如何创建对象。<br>一个评估项目：弹跳球<br>命名空间</p>
+<ul>
+<li>使用普通语法创建对象</li>
+<li>使用构造器创建对象 <code>new</code></li>
+<li>使用 <code>Object.create</code> 创建对象</li>
+<li>使用 <code>class</code> 关键字<br>关键字”this”指向了当前代码运行时的对象<br>hasOwnProperty 是 JavaScript 中唯一一个只涉及对象自身属性而不会遍历原型链的方法。<br>call()函数。基本上，这个函数允许你调用一个在这个文件里别处定义的函数。<br>Teacher.prototype = Object.create(Person.prototype);<br>Teacher.prototype.constructor = Teacher;<br>parse() stringify()</li>
+</ul>
+<h5 id="Web-API"><a href="#Web-API" class="headerlink" title="Web API"></a><a href="#Web-API" title="Web API"></a>Web API</h5><p>custom-player</p>
+<h4 id="中级教程"><a href="#中级教程" class="headerlink" title="中级教程"></a><a href="#中级教程" title="中级教程"></a>中级教程</h4><p>这章只有四个小的独立单元，算是对之前入门课程的一些补充和总结</p>
+<ul>
+<li>深入javascript</li>
+<li>javascript数据结构</li>
+<li>判断相等</li>
+<li>闭包</li>
+</ul>
+<h4 id="高级教程"><a href="#高级教程" class="headerlink" title="高级教程"></a><a href="#高级教程" title="高级教程"></a>高级教程</h4><p>这章的确很高级，讲了继承和原型链，严格模式，类型化数组，SIMD types 内存管理 Concurrency model and Event Loop.我甚至只接触过第一个章节。</p>
+<h4 id="javascript指南"><a href="#javascript指南" class="headerlink" title="javascript指南"></a><a href="#javascript指南" title="javascript指南"></a>javascript指南</h4><p>指南讲的很细，各种都有。其中<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Guide/Details_of_the_Object_Model#Property_inheritance_revisited" target="_blank" rel="noopener">对象模型的细节</a>的在一亩三分地论坛上的教程上建议对这章的继承和原型链多看几遍。</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/09/08/About-Knockout-s-official-tutorial/" rel="next" title="About Knockout's official tutorial">
+                <i class="fa fa-chevron-left"></i> About Knockout's official tutorial
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/09/25/vue-和knockout的最小实例/" rel="prev" title="vue 和knockout的最小实例">
+                vue 和knockout的最小实例 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Inhaltsverzeichnis
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Übersicht
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Butten</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">28</span>
+                  <span class="site-state-item-name">Artikel</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                
+                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-name">Tags</span>
+                
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#vue-教程"><span class="nav-number">1.</span> <span class="nav-text">vue 教程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#MDN的JS教程"><span class="nav-number">2.</span> <span class="nav-text">MDN的JS教程</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#快速入门"><span class="nav-number">2.1.</span> <span class="nav-text">快速入门</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#起步"><span class="nav-number">2.1.1.</span> <span class="nav-text">起步</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#基本结构"><span class="nav-number">2.1.2.</span> <span class="nav-text">基本结构</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#对象介绍"><span class="nav-number">2.1.3.</span> <span class="nav-text">对象介绍</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Web-API"><span class="nav-number">2.1.4.</span> <span class="nav-text">Web API</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#中级教程"><span class="nav-number">2.2.</span> <span class="nav-text">中级教程</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#高级教程"><span class="nav-number">2.3.</span> <span class="nav-text">高级教程</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#javascript指南"><span class="nav-number">2.4.</span> <span class="nav-text">javascript指南</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Butten</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Erstellt mit  <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
