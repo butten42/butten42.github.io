@@ -248,7 +248,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://butten42.github.io/2017/11/07/最近git的bash不好用了/">
+    <link itemprop="mainEntityOfPage" href="https://butten42.github.io/2017/11/10/Python-数据分析学习笔记（中国慕课大学）/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Butten">
@@ -267,7 +267,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/11/07/最近git的bash不好用了/" itemprop="url">最近git的bash不好用了</a></h1>
+                <a class="post-title-link" href="/2017/11/10/Python-数据分析学习笔记（中国慕课大学）/" itemprop="url">Python 数据分析学习笔记（中国慕课大学）</a></h1>
         
 
         <div class="post-meta">
@@ -279,8 +279,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-07T18:08:53+08:00">
-                2017-11-07
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-10T21:44:11+08:00">
+                2017-11-10
               </time>
             
 
@@ -298,9 +298,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2017/11/07/最近git的bash不好用了/#comments" itemprop="discussionUrl">
+                <a href="/2017/11/10/Python-数据分析学习笔记（中国慕课大学）/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2017/11/07/最近git的bash不好用了/" itemprop="commentCount"></span>
+                        data-disqus-identifier="2017/11/10/Python-数据分析学习笔记（中国慕课大学）/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -308,7 +308,7 @@
 
           
           
-             <span id="/2017/11/07/最近git的bash不好用了/" class="leancloud_visitors" data-flag-title="最近git的bash不好用了">
+             <span id="/2017/11/10/Python-数据分析学习笔记（中国慕课大学）/" class="leancloud_visitors" data-flag-title="Python 数据分析学习笔记（中国慕课大学）">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -341,21 +341,27 @@
       
         
           
-            <p>不知道是不是墙的原因，最近居然不能更新hexo博客了，push到git仓库也老是要求输入密码，我修改了配置文件，使用git方法加入仓库仍然是<br><code>Could not read from remote repository.</code>无法获取远程仓库<br><code>Permission denied (publickey)</code><br>我也不知道为什么忽然无法使用公钥了，那么就添加一个ssh吧。<br><a href="https://help.github.com/articles/adding-a-new-ssh-key-to-your-github-account/" target="_blank" rel="noopener">官方关于添加公钥的方法</a>  </p>
+            <p>期待已久的《<a href="http://www.icourse163.org/learn/BIT-1001870002?tid=1002239009" target="_blank" rel="noopener">Python数据分析与展示</a>》课程终于开始了<br><img src="http://edu-image.nosdn.127.net/FDE6B2C6D70B37BFA53FA0DB63CBA43C.png?imageView&amp;thumbnail=520x520&amp;quality=100" alt=""></p>
+<h3 id="概述"><a href="#概述" class="headerlink" title="概述"></a><a href="#概述" title="概述"></a>概述</h3><p>课程共包括4周内容，分别讲解：</p>
 <ol>
-<li>将SSH密钥复制到你的粘贴版</li>
-<li>在github的用户设置里找到‘SSH and GPG keys’，点击‘New SSH key’ 或者‘Add SSH key.’</li>
-<li>在title里添加你对这个密钥的描述（任意）</li>
-<li>将粘贴板的密钥复制到对应位置，点击添加</li>
-<li>提示输入用户密码，刷新后出现对应密钥说明成功了。</li>
+<li>Python第三方库NumPy，讲解N维数据的表达及科学计算的基本概念和运算方法；</li>
+<li>Python第三方库Matplotlib，讲解绘制坐标系、散点图、极坐标图等直观展示数据趋势和特点的方法；</li>
+<li>Python第三方库Pandas，强大的专业级数据分析和处理第三方库，介绍并讲解Series和DataFrame数据类型的表示和基本使用。</li>
 </ol>
-<p>如何生成密钥并加入代理？<br><a href="https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/#adding-your-ssh-key-to-the-ssh-agent" target="_blank" rel="noopener">Generating a new SSH key and adding it to the ssh-agent</a><br>在知乎上也有一个古旧的解决方案  </p>
-<blockquote>
-<p>极大多数情况是由于github账号没有设置ssh公钥信息所致。 前往 GitHub 网站的”account settings”依次点击”Setting -&gt; SSH Keys”-&gt;”New SSH key” Title处填写“id_rsa.pub”或其他任意信息。 key处原样拷贝下面命令的打印 <code>~/.ssh/id_rsa.pub</code> 文件的内容： <code>cat ~/.ssh/id_rsa.pub</code>如没有则按下述方法生成：  ssh-keygen -t rsa  一路回车……  最后，输入“ssh -T git@github.com”确认OK即可。再尝试输出就应该有了<code>cat ~/.ssh/id_rsa.pub</code></p>
-<p>作者：ElonChan<br>链接：<a href="https://www.zhihu.com/question/21402411/answer/95945718" target="_blank" rel="noopener">https://www.zhihu.com/question/21402411/answer/95945718</a></p>
-</blockquote>
-<p>这个方案要注意生成出的是：<br>The key fingerprint<br>The key’s randomart image<br>不是你需要添加进入的密钥（照理说他会自动将打印密钥复制到粘贴版上供你paste，但是我也不知道为什么没有）</p>
-<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="298" height="52" src="https://music.163.com/outchain/player?type=1&id=35497868&auto=0&height=32"></iframe>
+<h3 id="授课大纲"><a href="#授课大纲" class="headerlink" title="授课大纲"></a><a href="#授课大纲" title="授课大纲"></a>授课大纲</h3><p>课程共分8个内容单元和4个实战单元：<br>单元1：NumPy库入门：一维、二维、N维、高维数据表示和操作<br>单元2：NumPy数据存取与函数：多维数据存储、随机数函数、统计函数、梯度函数<br><strong>单元3：实战：图像的手绘效果</strong><br>单元4：Matplotlib库的入门和基本使用<br>单元5：Matplotlib基础绘图函数：饼图、直方图、极坐标图、散点图<br><strong>单元6：实战：引力波的绘制</strong><br>单元7：Pandas库入门：Series、DataFrame类型、基本操作<br>单元8：Pandas数据特征分析：数据排序、基本统计分析、累计分析、相关分析<br><strong>单元9：实战：房价趋势的关联因素分析</strong><br>单元10：Pandas数据清洗和规约：数据清洗、缺失值处理、属性规约、主成分分析<br>单元11：Pandas时序数据处理与展示<br><strong>单元12：实战：股票数据的趋势分析曲线</strong>  </p>
+<h3 id="笔记"><a href="#笔记" class="headerlink" title="笔记"></a><a href="#笔记" title="笔记"></a>笔记</h3><p>2017-11-10<br>昨天和今天学习完单元4，也就是Matplotlib库的入门  </p>
+<p><center>Anaconda集成开发环境</center><br>我之前只用过的pycharm，十分笨重，他带的那些东西我也没用上（之前搞web开发的时候一直没弄成）<br>这个IDE集成了conda的包管理器和一些编辑器像是spyder或是ipython，自带一票的科学计算和统计方面的库，所以不用再安装了，启动的时候打开 Anaconda Navigator里面有个图形界面，可以快捷启动一些编辑器<br>spyder编辑器有语法高亮和检测，还能选择主题，预览区内容也比较多<br>ipython对当前的一些语句语法有快捷选择  </p>
+<p><center>NumPy库入门，数据的表示</center><br>数据的维度：<br>维度：一组数据的组织形式<br>一维数据由对等关系的有序或无序数据构成，采用线性方式组织，对应列表、数组和集合等概念<br>二维数据由多个一维数据构成，是一维数据的组合形式，表格是典型的二维数据<br>其中，表头是二维数据的一部分<br>多维数据由一维或二维数据在新维度上扩展形成，<br>高维数据仅利用最基本的二元关系展示数据间的复杂结构<br><strong>ndarray数组的创建方法</strong>  </p>
+<ul>
+<li>从Python中的列表、元组等类型创建ndarray数组</li>
+<li>使用NumPy中函数创建ndarray数组，如：arange, ones, zeros<br>等</li>
+<li>使用NumPy中其他函数创建ndarray数组</li>
+</ul>
+<p>数组的索引和切片<br>数组与标量之间的运算  </p>
+<p><center>NumPy库数据存储与函数</center><br>CSV只能有效存储一维和二维数组<br>np.savetxt() np.loadtxt()只能有效存取一维和二维数组<br>numpy的多维存储<br>numpy 的随机函数<br>numpy 的统计函数<br>numpy 的梯度函数</p>
+<p><center>实战：图像的手绘风实现</center><br>根据灰度变化来模拟人类视觉的远近程度</p>
+<p><center>Matplotlib库入门</center><br>Matplotlib库由各种可视化类构成，内部结构复杂，受Matlab启发<br>matplotlib.pyplot是绘制各类可视化图形的命令子库，相当于快捷方式<br>plt.plot()只有一个输入列表或数组时，参数被当作Y轴，X轴以索引自动生成<br>plt.savefig()将输出图形存储为文件，默认PNG格式，可以通过dpi修改输出质量<br>plt.plot(x,y)当有两个以上参数时，按照X轴和Y轴顺序绘制数据点<br>pyplot并不默认支持中文显示，需要rcParams修改字体实现<br>或者：在有中文输出的地方，增加一个属性：fontproperties<br>复制绘图区域<br>plt.subplot2grid(GridSpec, CurSpec, colspan=1, rowspan=1)<br>gridspec类 gs=gridspec.GridSpec()</p>
+
           
         
       
@@ -694,158 +700,6 @@ var demo = new Child();
 alert(demo.age);
 alert(demo.name);//得到被继承的属性
 </code></pre>
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://butten42.github.io/2017/10/19/井字棋与极大极小算法/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Butten">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="The Dragon's Call">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/10/19/井字棋与极大极小算法/" itemprop="url">井字棋与极大极小算法</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-19T19:24:31+08:00">
-                2017-10-19
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2017/10/19/井字棋与极大极小算法/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2017/10/19/井字棋与极大极小算法/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-             <span id="/2017/10/19/井字棋与极大极小算法/" class="leancloud_visitors" data-flag-title="井字棋与极大极小算法">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>FCC上的一个利用经典的极大极小算法的项目，<a href="https://zh.wikipedia.org/wiki/%E4%BA%95%E5%AD%97%E6%A3%8B" target="_blank" rel="noopener">井字棋</a>（我家那边叫“三笔直”）.<br>规则很简单：  </p>
-<ul>
-<li>游戏一共两人，轮流执子</li>
-<li>每回合就是在一个九格正方形里放置一子</li>
-<li>当任意一方摆出的子连成一线时获胜。</li>
-</ul>
-<p>（所以最快三个会合可以重来一局，小时候和小伙伴们在墙根底下经常随时取地上的石子玩耍）<br>就结构和样式其实很简单啦，难点在于如何模拟AI的动作，<br>这时就可以参考<a href="https://zh.wikipedia.org/wiki/%E6%9E%81%E5%B0%8F%E5%8C%96%E6%9E%81%E5%A4%A7%E7%AE%97%E6%B3%95" target="_blank" rel="noopener">最小最大算法</a>了，我直接在网上找相关的文章，解释的比较好的就是知乎上的，我直接引用了:</p>
-<blockquote>
-<p>先来说极小极大算法主要应用于什么样的游戏：  1. 零和游戏（Zero-sum Game）：意思就是你死我活，一方的胜利代表另一方的失败，比如，象棋，五子棋等。  2. 完全信息（Perfect Information）：玩家知道之前所有的步骤。象棋就是完全信息，因为玩家是交替着落子，且之前的步骤都能在棋盘上体现，但是石头剪子布就不是。这样的游戏通常可以把他们看作一个树状图，把每一种可能性列出来。比如下面这个井字棋游戏，Max代表你自己，Min代表你的对手。<br>这个时候我们需要给每一种结果一个分数，就是这里的Utility。这个分数是站在我自己（也就是Max）的角度评估的，比如上图中我赢了就是＋1，输了是－1，平局时0。所以，我希望最大化这个分数，而我的对手希望最小化这个分数。（在游戏中，这个分数被称为static value。）这里要说一下，井字棋是个比较简单的游戏，所以可以列出所有可能的结果。但是，大部分游戏是不太可能把所有结果都列出来的。根据计算机运算量，我们可能只能往前推7，8步，所以这个时候分数就不只－1，1，0这么简单了，会有专门的算法来根据当前结果给不同的分数。</p>
-</blockquote>
-<p><img src="https://pic2.zhimg.com/50/v2-4bc20188baf14f03a169f0c466b640a9_hd.png" alt=""><br>作者：好想养只小短腿 <a href="https://www.zhihu.com/question/27221568/answer/140874499" target="_blank" rel="noopener">链接</a><br>在了解了具体算法之后该怎么使用代码将其实现呢？<br>没有头绪的时候就用自然语言随便写下可能的步骤吧（这还是Udacity上学的，启发式教育还是有其优势啊）</p>
-
           
         
       
@@ -1945,7 +1799,7 @@ return this.firstName() + &amp;quot; &amp;quot; + this.lastName();
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">30</span>
+                  <span class="site-state-item-count">29</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1958,7 +1812,7 @@ return this.firstName() + &amp;quot; &amp;quot; + this.lastName();
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">6</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
