@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://butten42.github.io/"/>
-  <updated>2018-12-31T15:24:15.053Z</updated>
+  <updated>2019-03-25T11:39:01.796Z</updated>
   <id>https://butten42.github.io/</id>
   
   <author>
@@ -15,6 +15,67 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>用手机干什么</title>
+    <link href="https://butten42.github.io/2019/02/20/%E7%94%A8%E6%89%8B%E6%9C%BA%E5%B9%B2%E4%BB%80%E4%B9%88/"/>
+    <id>https://butten42.github.io/2019/02/20/用手机干什么/</id>
+    <published>2019-02-20T02:12:06.000Z</published>
+    <updated>2019-03-25T11:39:01.796Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;每隔一段时间我就会想重新用回功能机，现在的手机越来越smart，但又不那么smart，每天浪费在手机上的无用时间太多了，简直是时间窃贼。&lt;/p&gt;
+&lt;p&gt;我用手机支付，扫码，NFC充值，节约了去线下办事的时间，但信息来的太容易，我总想要的更多，知道的更多，享受更多廉价的快乐，
+        
+      
+    
+    </summary>
+    
+    
+      <category term="随笔" scheme="https://butten42.github.io/tags/%E9%9A%8F%E7%AC%94/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>在哪看片</title>
+    <link href="https://butten42.github.io/2019/02/20/%E5%9C%A8%E5%93%AA%E7%9C%8B%E7%89%87/"/>
+    <id>https://butten42.github.io/2019/02/20/在哪看片/</id>
+    <published>2019-02-20T02:11:41.000Z</published>
+    <updated>2019-02-20T02:11:41.809Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>地球最后的夜晚</title>
+    <link href="https://butten42.github.io/2019/02/20/%E5%9C%B0%E7%90%83%E6%9C%80%E5%90%8E%E7%9A%84%E5%A4%9C%E6%99%9A/"/>
+    <id>https://butten42.github.io/2019/02/20/地球最后的夜晚/</id>
+    <published>2019-02-20T02:10:34.000Z</published>
+    <updated>2019-03-25T12:26:23.521Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;iframe frameborder=&quot;no&quot; border=&quot;0&quot; marginwidth=&quot;0&quot; marginheight=&quot;0&quot; width=&quot;298&quot; height=&quot;52&quot;
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>蜀之鄙有二僧</title>
@@ -46,7 +107,7 @@
     <link href="https://butten42.github.io/2018/12/10/%E5%86%99%E4%B8%80%E4%B8%AA%E8%B0%B7%E6%AD%8C%E6%B5%8F%E8%A7%88%E5%99%A8%E6%89%A9%E5%B1%95/"/>
     <id>https://butten42.github.io/2018/12/10/写一个谷歌浏览器扩展/</id>
     <published>2018-12-10T12:18:15.000Z</published>
-    <updated>2019-01-03T08:12:21.873Z</updated>
+    <updated>2019-02-20T03:02:40.690Z</updated>
     
     <summary type="html">
     
@@ -54,8 +115,9 @@
       
         
         
-          &lt;p&gt;test&lt;/p&gt;
-&lt;iframe src=&quot;https://www.gcores.com/radios/105101/embed&quot; width=&quot;480&quot; height=&quot;400&quot; allowtransparency=&quot;true&quot; border=&quot;0&quot;
+          &lt;p&gt;&lt;strong&gt;这不是一个教程&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;我写了一个谷歌插件，名叫“51天眼”，是用在51job上快速查询企业工商信息的。&lt;/p&gt;
+&lt;h3 id=&quot;缘起&quot;&gt;&lt;a href=&quot;#缘起&quot; class=&quot;headerlink&quot;
         
       
     

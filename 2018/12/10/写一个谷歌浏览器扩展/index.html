@@ -81,18 +81,18 @@
 
 
 
-<meta name="description" content="test">
+<meta name="description" content="这不是一个教程 我写了一个谷歌插件，名叫“51天眼”，是用在51job上快速查询企业工商信息的。 缘起我通常只用51job来应聘，但是在51上没有对应的工商信息，必须每次都手动到天眼查里去搜索，为了节约一些时间，我于是写了这个插件。 最初我是打算用天眼查官方的api，直接查询然后显示到页面上，但他们并没给开发者api，只能找他们的BD买接口，我哪来那么多钱。 找了同类的工商查询网站都是这样的，所以">
 <meta name="keywords" content="谷歌,插件">
 <meta property="og:type" content="article">
 <meta property="og:title" content="写一个谷歌浏览器扩展">
 <meta property="og:url" content="https://butten42.github.io/2018/12/10/写一个谷歌浏览器扩展/index.html">
 <meta property="og:site_name" content="The Dragon&#39;s Call">
-<meta property="og:description" content="test">
+<meta property="og:description" content="这不是一个教程 我写了一个谷歌插件，名叫“51天眼”，是用在51job上快速查询企业工商信息的。 缘起我通常只用51job来应聘，但是在51上没有对应的工商信息，必须每次都手动到天眼查里去搜索，为了节约一些时间，我于是写了这个插件。 最初我是打算用天眼查官方的api，直接查询然后显示到页面上，但他们并没给开发者api，只能找他们的BD买接口，我哪来那么多钱。 找了同类的工商查询网站都是这样的，所以">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-01-03T08:12:21.873Z">
+<meta property="og:updated_time" content="2019-02-20T03:02:40.690Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="写一个谷歌浏览器扩展">
-<meta name="twitter:description" content="test">
+<meta name="twitter:description" content="这不是一个教程 我写了一个谷歌插件，名叫“51天眼”，是用在51job上快速查询企业工商信息的。 缘起我通常只用51job来应聘，但是在51上没有对应的工商信息，必须每次都手动到天眼查里去搜索，为了节约一些时间，我于是写了这个插件。 最初我是打算用天眼查官方的api，直接查询然后显示到页面上，但他们并没给开发者api，只能找他们的BD买接口，我哪来那么多钱。 找了同类的工商查询网站都是这样的，所以">
 
 
 
@@ -343,8 +343,15 @@
       
 
       
-        <p>test</p>
-<iframe src="https://www.gcores.com/radios/105101/embed" width="480" height="400" allowtransparency="true" border="0" frameborder="0" style="width:480px;height:400px;"></iframe>
+        <p><strong>这不是一个教程</strong></p>
+<p>我写了一个谷歌插件，名叫“51天眼”，是用在51job上快速查询企业工商信息的。</p>
+<h3 id="缘起"><a href="#缘起" class="headerlink" title="缘起"></a>缘起</h3><p>我通常只用51job来应聘，但是在51上没有对应的工商信息，必须每次都手动到天眼查里去搜索，为了节约一些时间，我于是写了这个插件。</p>
+<p>最初我是打算用天眼查官方的api，直接查询然后显示到页面上，但他们并没给开发者api，只能找他们的BD买接口，我哪来那么多钱。</p>
+<p>找了同类的工商查询网站都是这样的，所以接口行不通。</p>
+<p>好在可以直接通过url直接精确跳到查询页面，还是比我自己手动的快。</p>
+<h3 id="作成"><a href="#作成" class="headerlink" title="作成"></a>作成</h3><p>写插件和普通的前端页面开发没什么差别，主要就是多了一些chrome的接口和清单文件，就是要告诉chrome我这东西要放哪，怎么放，什么时候放。</p>
+<p>发布花了我5美刀的开发者注册费。</p>
+
       
     </div>
     
@@ -480,8 +487,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -496,7 +512,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">35</span>
+                  <span class="site-state-item-count">38</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -539,6 +555,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#缘起"><span class="nav-number">1.</span> <span class="nav-text">缘起</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#作成"><span class="nav-number">2.</span> <span class="nav-text">作成</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
