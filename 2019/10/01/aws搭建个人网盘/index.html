@@ -1,0 +1,927 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="生活,技术,AWS,云服务," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="The Dragon's Call" type="application/atom+xml" />
+
+
+
+
+
+
+<meta name="description" content="缘起之前的收藏夹里有提到用服务器搭建个人网盘的，我在微云的会员到期后发现会员只能买20块钱的了，要是能搭一个自己的网盘还挺方便的，于是有了这次的意外之旅。 过程方案预定  注册试用AWS云服务器 装载ubuntu系统 安装宝塔运维后台 在宝塔后台安装必要的环境软件（php，sql）等 安装cloudreve网盘系统 运行调试  实际过程 服务器选择失误选择AWS是个失误，虽然它有一年的免费使用但是">
+<meta name="keywords" content="生活,技术,AWS,云服务">
+<meta property="og:type" content="article">
+<meta property="og:title" content="aws搭建个人网盘">
+<meta property="og:url" content="https://butten42.github.io/2019/10/01/aws搭建个人网盘/index.html">
+<meta property="og:site_name" content="The Dragon&#39;s Call">
+<meta property="og:description" content="缘起之前的收藏夹里有提到用服务器搭建个人网盘的，我在微云的会员到期后发现会员只能买20块钱的了，要是能搭一个自己的网盘还挺方便的，于是有了这次的意外之旅。 过程方案预定  注册试用AWS云服务器 装载ubuntu系统 安装宝塔运维后台 在宝塔后台安装必要的环境软件（php，sql）等 安装cloudreve网盘系统 运行调试  实际过程 服务器选择失误选择AWS是个失误，虽然它有一年的免费使用但是">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-10-04T06:23:57.191Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="aws搭建个人网盘">
+<meta name="twitter:description" content="缘起之前的收藏夹里有提到用服务器搭建个人网盘的，我在微云的会员到期后发现会员只能买20块钱的了，要是能搭一个自己的网盘还挺方便的，于是有了这次的意外之旅。 过程方案预定  注册试用AWS云服务器 装载ubuntu系统 安装宝塔运维后台 在宝塔后台安装必要的环境软件（php，sql）等 安装cloudreve网盘系统 运行调试  实际过程 服务器选择失误选择AWS是个失误，虽然它有一年的免费使用但是">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://butten42.github.io/2019/10/01/aws搭建个人网盘/"/>
+
+
+
+
+
+  <title>aws搭建个人网盘 | The Dragon's Call</title>
+  
+
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-127960508-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">The Dragon's Call</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://butten42.github.io/2019/10/01/aws搭建个人网盘/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Butten">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="The Dragon's Call">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">aws搭建个人网盘</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-10-01T19:02:12+08:00">
+                2019-10-01
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/10/01/aws搭建个人网盘/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2019/10/01/aws搭建个人网盘/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2019/10/01/aws搭建个人网盘/" class="leancloud_visitors" data-flag-title="aws搭建个人网盘">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="缘起"><a href="#缘起" class="headerlink" title="缘起"></a>缘起</h3><p>之前的收藏夹里有提到用服务器搭建个人网盘的，我在微云的会员到期后发现会员只能买20块钱的了，要是能搭一个自己的网盘还挺方便的，于是有了这次的意外之旅。</p>
+<h3 id="过程"><a href="#过程" class="headerlink" title="过程"></a>过程</h3><p>方案预定</p>
+<ol>
+<li>注册试用AWS云服务器</li>
+<li>装载ubuntu系统</li>
+<li>安装宝塔运维后台</li>
+<li>在宝塔后台安装必要的环境软件（php，sql）等</li>
+<li>安装cloudreve网盘系统</li>
+<li>运行调试</li>
+</ol>
+<p>实际过程</p>
+<h4 id="服务器选择失误"><a href="#服务器选择失误" class="headerlink" title="服务器选择失误"></a>服务器选择失误</h4><p>选择AWS是个失误，虽然它有一年的免费使用但是由于系统复杂，配置的学习成本太高，而且由于是外网服务器，消耗在网络连接上的时间会很多，产生的麻烦也很多，所以不推荐小白入手。</p>
+<p>后来我试用了腾讯云，没有了墙的困扰，幺蛾子就少了很多，但腾讯的服务器是不如AWS的，同配置同系统的服务器安装宝塔，AWS用了2分钟，腾讯云用了6分钟。</p>
+<h4 id="AMI选择"><a href="#AMI选择" class="headerlink" title="AMI选择"></a>AMI选择</h4><p>实例选择的时候最初按照官方教程选择了亚马逊linux，但后来实际安装的时候我还是改用了ubuntu的，在连接到虚拟机实例的时候亚马逊对不同AMI有不同的默认用户名，需要仔细查阅。在win系统上官方推荐下载两个openssh的软件<code>putty</code>&amp;<code>puttygen</code>，来做密钥登陆，然而我都是敲入.pem的文件路径连接主机，似乎也不需要这两个东西。</p>
+<h4 id="宝塔的安装"><a href="#宝塔的安装" class="headerlink" title="宝塔的安装"></a>宝塔的安装</h4><p>宝塔只是一个可视化的运维后台。并不是安装网盘必须的，但它的确提供了大量的便利。只是最初在安装完毕后我登陆宝塔后台总显示5<code>500 Internal Server Error</code>的服务器错误。</p>
+<p>当时以为是墙的原因，没救了，但后来发现是需要配置安全组，放行宝塔的8888端口，就可以在联通网络上“大致”运行了（还是很可能被墙也没啥速度），而且即使如此宝塔下载的速度也慢的不行。</p>
+<p>宝塔安装后选择LAMP，安装的时候注意需要选择php版本7以上的。这些环境安装完成之后在系统根目录下建立文件夹，把从cloudreve官网上下载的安装包上传后解压。打开<code>你的域名/CloudreveInstaller/</code>下安装cloudreve，这里必须把数据库名用户名都填上，我之前没有填数据库名无法打开网站，也没法再次安装。</p>
+<p>宝塔还提供一系列的插件安装，然而并没用。</p>
+<p>我也试过不用宝塔，直接安装，但毕竟linux小白，各种赋权压根不懂。</p>
+<h4 id="cloudreve"><a href="#cloudreve" class="headerlink" title="cloudreve"></a>cloudreve</h4><p>官网提供三种方法安装：</p>
+<ul>
+<li>php安装</li>
+<li>直接下载安装</li>
+<li>docker镜像安装</li>
+</ul>
+<p>我都试过了，第一种在安装后发现后续操作很困难很快就放弃了。第二种是我使用宝塔后的安装方法也就是上面提到的。最后一种其实最方便，但是对小白来说自由扩展性不好，但可以不安装宝塔，直接食用。</p>
+<h4 id="网盘体验"><a href="#网盘体验" class="headerlink" title="网盘体验"></a>网盘体验</h4><p>我最初看的<a href="https://www.bilibili.com/video/av62594820" target="_blank" rel="noopener">教程</a>里提到了三个网盘(nextcloud,cloudreve,可道云)的搭建，我找的是ui最好，扩展性最好的，但实际上手并不是我想要的。虽然是用最新的前端技术搭建的，但ui不讲究，最重要的是我最看重的功能：<strong>离线下载</strong>不是我想要的样子。它需要再配置aria2下载，而且等于下载同一资源需要花费双倍流量，速度也堪忧。完全没有实际意义。</p>
+<h3 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h3><p>我本来还打算买个域名，庆祝一下自己第一个上线访问的个人应用，但实际上个人服务器除了学习压根没什么意义。</p>
+<p>我失望的关闭了es2实例防止额外付费。</p>
+<h3 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h3><ul>
+<li><em><a href="https://cloudreve.github.io/docs/#/install" target="_blank" rel="noopener">cloudreve文档</a></em></li>
+<li><em><a href="https://blog.ilemonrain.com/docker/cloudreve.html" target="_blank" rel="noopener">cloudreve docker安装教程</a></em></li>
+<li><em><a href="https://www.bt.cn/bbs/thread-19376-1-1.html" target="_blank" rel="noopener">宝塔镜像教程</a></em></li>
+</ul>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>喜欢吗？</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.jpg" alt="Butten 支付宝"/>
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/生活/" rel="tag"># 生活</a>
+          
+            <a href="/tags/技术/" rel="tag"># 技术</a>
+          
+            <a href="/tags/AWS/" rel="tag"># AWS</a>
+          
+            <a href="/tags/云服务/" rel="tag"># 云服务</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/09/29/泰拉瑞亚与平行世界/" rel="next" title="泰拉瑞亚与平行世界">
+                <i class="fa fa-chevron-left"></i> 泰拉瑞亚与平行世界
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/10/04/working-poor/" rel="prev" title="working poor">
+                working poor <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <!-- Go to www.addthis.com/dashboard to customize your tools -->
+<div class="addthis_inline_share_toolbox">
+  <script type = "text/javascript" src = "//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5bfcfce6da6a62ad" async = "async" ></script>
+</div>
+
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Butten</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">58</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">22</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#缘起"><span class="nav-number">1.</span> <span class="nav-text">缘起</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#过程"><span class="nav-number">2.</span> <span class="nav-text">过程</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#服务器选择失误"><span class="nav-number">2.1.</span> <span class="nav-text">服务器选择失误</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#AMI选择"><span class="nav-number">2.2.</span> <span class="nav-text">AMI选择</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#宝塔的安装"><span class="nav-number">2.3.</span> <span class="nav-text">宝塔的安装</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#cloudreve"><span class="nav-number">2.4.</span> <span class="nav-text">cloudreve</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#网盘体验"><span class="nav-number">2.5.</span> <span class="nav-text">网盘体验</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#结论"><span class="nav-number">3.</span> <span class="nav-text">结论</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#参考"><span class="nav-number">4.</span> <span class="nav-text">参考</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Butten</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+    
+      <script id="dsq-count-scr" src="https://butten.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'https://butten42.github.io/2019/10/01/aws搭建个人网盘/';
+          this.page.identifier = '2019/10/01/aws搭建个人网盘/';
+          this.page.title = 'aws搭建个人网盘';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://butten.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("BvgpU0WgAr6yyQllRI0z3yEf-gzGzoHsz", "biYy3SpEejtyMtKTqkB7sic4");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
