@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://butten42.github.io/"/>
-  <updated>2019-10-11T11:35:56.824Z</updated>
+  <updated>2019-10-21T10:56:32.140Z</updated>
   <id>https://butten42.github.io/</id>
   
   <author>
@@ -15,6 +15,65 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>2019年流量使用策略</title>
+    <link href="https://butten42.github.io/2019/10/19/2019%E5%B9%B4%E6%B5%81%E9%87%8F%E4%BD%BF%E7%94%A8%E7%AD%96%E7%95%A5/"/>
+    <id>https://butten42.github.io/2019/10/19/2019年流量使用策略/</id>
+    <published>2019-10-19T14:20:47.000Z</published>
+    <updated>2019-10-21T10:56:32.140Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;最近流量使用的蛮多的就聊聊流量使用上的一些心得吧，我有两张卡，一张移动一张联通，不知道电信是什么样子。&lt;/p&gt;
+&lt;p&gt;首先排除任何移动流量包套餐，还记得5元30M的移动吗，他并没有改变，不小心超了的话很容易“破产”。移动的流量包30元10g，7天，20元5g7天，一般的1g
+        
+      
+    
+    </summary>
+    
+    
+      <category term="生活" scheme="https://butten42.github.io/tags/%E7%94%9F%E6%B4%BB/"/>
+    
+      <category term="联通" scheme="https://butten42.github.io/tags/%E8%81%94%E9%80%9A/"/>
+    
+      <category term="移动" scheme="https://butten42.github.io/tags/%E7%A7%BB%E5%8A%A8/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>vuex&amp;vue-router</title>
+    <link href="https://butten42.github.io/2019/10/18/vuex-vue-router/"/>
+    <id>https://butten42.github.io/2019/10/18/vuex-vue-router/</id>
+    <published>2019-10-18T06:37:19.000Z</published>
+    <updated>2019-10-18T13:56:34.960Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h3 id=&quot;概要&quot;&gt;&lt;a href=&quot;#概要&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="技术" scheme="https://butten42.github.io/tags/%E6%8A%80%E6%9C%AF/"/>
+    
+      <category term="vue" scheme="https://butten42.github.io/tags/vue/"/>
+    
+      <category term="vuex" scheme="https://butten42.github.io/tags/vuex/"/>
+    
+      <category term="vue-router" scheme="https://butten42.github.io/tags/vue-router/"/>
+    
+  </entry>
   
   <entry>
     <title>使用calibre搭建个人书库</title>
@@ -64,9 +123,9 @@
     </summary>
     
     
-      <category term="随笔" scheme="https://butten42.github.io/tags/%E9%9A%8F%E7%AC%94/"/>
-    
       <category term="生活" scheme="https://butten42.github.io/tags/%E7%94%9F%E6%B4%BB/"/>
+    
+      <category term="随笔" scheme="https://butten42.github.io/tags/%E9%9A%8F%E7%AC%94/"/>
     
       <category term="NHK" scheme="https://butten42.github.io/tags/NHK/"/>
     
@@ -250,9 +309,9 @@
     </summary>
     
     
-      <category term="随笔" scheme="https://butten42.github.io/tags/%E9%9A%8F%E7%AC%94/"/>
-    
       <category term="生活" scheme="https://butten42.github.io/tags/%E7%94%9F%E6%B4%BB/"/>
+    
+      <category term="随笔" scheme="https://butten42.github.io/tags/%E9%9A%8F%E7%AC%94/"/>
     
   </entry>
   
