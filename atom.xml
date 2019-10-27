@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://butten42.github.io/"/>
-  <updated>2019-10-21T10:56:32.140Z</updated>
+  <updated>2019-10-27T13:24:41.096Z</updated>
   <id>https://butten42.github.io/</id>
   
   <author>
@@ -15,6 +15,35 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>rsshub</title>
+    <link href="https://butten42.github.io/2019/10/26/rsshub/"/>
+    <id>https://butten42.github.io/2019/10/26/rsshub/</id>
+    <published>2019-10-26T14:56:47.000Z</published>
+    <updated>2019-10-27T13:24:41.096Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;这算是我加入的第一个开源项目了。原因是为了节省在网络上闲逛的时间，把信息源统一起来集中阅读，我发现了这个rss订阅源生成器项目，看起来门槛也不高，文档和社区也都齐备，就加群潜水了一段时间（因为我太懒了）。&lt;/p&gt;
+&lt;p&gt;不过市面上没有令我满意的rss阅读器。官方推荐的fee
+        
+      
+    
+    </summary>
+    
+    
+      <category term="技术" scheme="https://butten42.github.io/tags/%E6%8A%80%E6%9C%AF/"/>
+    
+      <category term="rss" scheme="https://butten42.github.io/tags/rss/"/>
+    
+      <category term="开源" scheme="https://butten42.github.io/tags/%E5%BC%80%E6%BA%90/"/>
+    
+  </entry>
   
   <entry>
     <title>2019年流量使用策略</title>
@@ -42,36 +71,6 @@
       <category term="联通" scheme="https://butten42.github.io/tags/%E8%81%94%E9%80%9A/"/>
     
       <category term="移动" scheme="https://butten42.github.io/tags/%E7%A7%BB%E5%8A%A8/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>vuex&amp;vue-router</title>
-    <link href="https://butten42.github.io/2019/10/18/vuex-vue-router/"/>
-    <id>https://butten42.github.io/2019/10/18/vuex-vue-router/</id>
-    <published>2019-10-18T06:37:19.000Z</published>
-    <updated>2019-10-18T13:56:34.960Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h3 id=&quot;概要&quot;&gt;&lt;a href=&quot;#概要&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-    
-      <category term="技术" scheme="https://butten42.github.io/tags/%E6%8A%80%E6%9C%AF/"/>
-    
-      <category term="vue" scheme="https://butten42.github.io/tags/vue/"/>
-    
-      <category term="vuex" scheme="https://butten42.github.io/tags/vuex/"/>
-    
-      <category term="vue-router" scheme="https://butten42.github.io/tags/vue-router/"/>
     
   </entry>
   
