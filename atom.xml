@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://butten42.github.io/"/>
-  <updated>2019-11-13T10:36:17.420Z</updated>
+  <updated>2019-11-14T10:59:45.086Z</updated>
   <id>https://butten42.github.io/</id>
   
   <author>
@@ -15,6 +15,66 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>不开心</title>
+    <link href="https://butten42.github.io/2019/11/14/%E4%B8%8D%E5%BC%80%E5%BF%83/"/>
+    <id>https://butten42.github.io/2019/11/14/不开心/</id>
+    <published>2019-11-14T00:20:34.000Z</published>
+    <updated>2019-11-14T10:59:45.086Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;需求没有得到满足，长期处于情绪的负债状态，对世界的看法也消极而被动起来，从而令现状每况愈下，似乎就是赌鬼心态，要么就赢大的，要么就全输，对于日常倒是变得无感了，这难道真的没有办法吗？&lt;/p&gt;
+&lt;p&gt;幸福感从何而来？&lt;/p&gt;
+&lt;p&gt;当我完成开源项目后我是有幸福感的，当我坚持c
+        
+      
+    
+    </summary>
+    
+    
+      <category term="随笔" scheme="https://butten42.github.io/tags/%E9%9A%8F%E7%AC%94/"/>
+    
+      <category term="日常" scheme="https://butten42.github.io/tags/%E6%97%A5%E5%B8%B8/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>react 初探</title>
+    <link href="https://butten42.github.io/2019/11/13/react-%E5%88%9D%E6%8E%A2/"/>
+    <id>https://butten42.github.io/2019/11/13/react-初探/</id>
+    <published>2019-11-13T12:39:55.000Z</published>
+    <updated>2019-11-14T10:10:04.650Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;和VUE的比较&lt;br&gt;最小实例&lt;br&gt;函数式编程MVC面向对象的&lt;br&gt;从并子棋游戏开始了解react特性&lt;/p&gt;
+&lt;p&gt;核心概念&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;JSX&lt;/li&gt;
+&lt;li&gt;元素渲染&lt;/li&gt;
+&lt;li&gt;组件&amp;amp;props&lt;/li&gt;
+&lt;li&gt;state
+        
+      
+    
+    </summary>
+    
+    
+      <category term="react" scheme="https://butten42.github.io/tags/react/"/>
+    
+      <category term="技术" scheme="https://butten42.github.io/tags/%E6%8A%80%E6%9C%AF/"/>
+    
+  </entry>
   
   <entry>
     <title>买书如山倒，看书如抽丝</title>
