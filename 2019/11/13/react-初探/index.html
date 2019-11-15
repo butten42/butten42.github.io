@@ -81,18 +81,18 @@
 
 
 
-<meta name="description" content="和VUE的比较最小实例函数式编程MVC面向对象的从并子棋游戏开始了解react特性 核心概念  JSX 元素渲染 组件&amp;amp;props state &amp;amp; 生命周期 事件处理 条件渲染 列表&amp;amp;key 表单 状态提升 组合VS继承 react 哲学">
+<meta name="description" content="react是我学习的第四个前端框架，顺序依次是jquery,knockout,vue,react。看过了官方教程&amp;amp;文档，在fcc上看了一个react markdown项目，算是对react有了一个初步的认识。 对于vue玩家来说，react有它的优点，但缺点也十分明显，没有MVC，我初看的时候还以为是面条编程，而事实上react也确实更偏向于函数式编程，而vue则更看重对象，vue给玩家的">
 <meta name="keywords" content="react,技术">
 <meta property="og:type" content="article">
 <meta property="og:title" content="react 初探">
 <meta property="og:url" content="https://butten42.github.io/2019/11/13/react-初探/index.html">
 <meta property="og:site_name" content="Batavia">
-<meta property="og:description" content="和VUE的比较最小实例函数式编程MVC面向对象的从并子棋游戏开始了解react特性 核心概念  JSX 元素渲染 组件&amp;amp;props state &amp;amp; 生命周期 事件处理 条件渲染 列表&amp;amp;key 表单 状态提升 组合VS继承 react 哲学">
+<meta property="og:description" content="react是我学习的第四个前端框架，顺序依次是jquery,knockout,vue,react。看过了官方教程&amp;amp;文档，在fcc上看了一个react markdown项目，算是对react有了一个初步的认识。 对于vue玩家来说，react有它的优点，但缺点也十分明显，没有MVC，我初看的时候还以为是面条编程，而事实上react也确实更偏向于函数式编程，而vue则更看重对象，vue给玩家的">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-11-14T10:10:04.650Z">
+<meta property="og:updated_time" content="2019-11-15T11:53:09.205Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="react 初探">
-<meta name="twitter:description" content="和VUE的比较最小实例函数式编程MVC面向对象的从并子棋游戏开始了解react特性 核心概念  JSX 元素渲染 组件&amp;amp;props state &amp;amp; 生命周期 事件处理 条件渲染 列表&amp;amp;key 表单 状态提升 组合VS继承 react 哲学">
+<meta name="twitter:description" content="react是我学习的第四个前端框架，顺序依次是jquery,knockout,vue,react。看过了官方教程&amp;amp;文档，在fcc上看了一个react markdown项目，算是对react有了一个初步的认识。 对于vue玩家来说，react有它的优点，但缺点也十分明显，没有MVC，我初看的时候还以为是面条编程，而事实上react也确实更偏向于函数式编程，而vue则更看重对象，vue给玩家的">
 
 
 
@@ -391,8 +391,17 @@
       
 
       
-        <p>和VUE的比较<br>最小实例<br>函数式编程MVC面向对象的<br>从并子棋游戏开始了解react特性</p>
-<p>核心概念</p>
+        <p>react是我学习的第四个前端框架，顺序依次是jquery,knockout,vue,react。看过了官方教程&amp;文档，在fcc上看了一个react markdown项目，算是对react有了一个初步的认识。</p>
+<p>对于vue玩家来说，react有它的优点，但缺点也十分明显，没有MVC，我初看的时候还以为是面条编程，而事实上react也确实更偏向于函数式编程，而vue则更看重对象，vue给玩家的选择并不多，玩家也不需要多关心vue内部的事情，而react的自定义空间更大，玩家的参与度更高。</p>
+<p>我目前还是比较习惯vue。</p>
+<h3 id="和VUE的比较：从最小实例开始"><a href="#和VUE的比较：从最小实例开始" class="headerlink" title="和VUE的比较：从最小实例开始"></a>和VUE的比较：从最小实例开始</h3><p>这是react的最小实例</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">ReactDOM.render(</span><br><span class="line">  &lt;h1&gt;Hello, world!&lt;/h1&gt;,</span><br><span class="line">  document.getElementById(&apos;example&apos;)</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+<p>这是vue的</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">var app = new Vue(&#123;</span><br><span class="line">  el: &apos;#app&apos;,</span><br><span class="line">  data: &#123;</span><br><span class="line">    message: &apos;Hello Vue!&apos;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p>单就可读性来说vue胜出。我也不怎么喜欢写jsx。</p>
+<h3 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h3><p>官方从并子棋游戏开始了解react特性，props传递，状态提升，事件，函数式组件和class组件。</p>
+<p>除了一个边做边学的例子外还有对应的文档，老实说我觉得文档不怎么样，翻译的也有些拗口，外国人就是不会教人。</p>
+<p>核心概念有：</p>
 <ul>
 <li>JSX</li>
 <li>元素渲染</li>
@@ -406,6 +415,7 @@
 <li>组合VS继承</li>
 <li>react 哲学</li>
 </ul>
+<p>最后一章是react的核心设计思想，分层，单一功能原则，ui和js的合一性。但是这些核心之外还有hook，和reactDOM等等要继续学习，我不知道是否要继续，无论是vue还是react都没有什么太大的差别，我把vue学好学精来应该就能应对大部分的工作了，而且vue从react身上也学习了状态管理，总体趋势应该是大家殊途同归。</p>
 
       
     </div>
@@ -542,8 +552,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -601,6 +620,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#和VUE的比较：从最小实例开始"><span class="nav-number">1.</span> <span class="nav-text">和VUE的比较：从最小实例开始</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#例子"><span class="nav-number">2.</span> <span class="nav-text">例子</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
